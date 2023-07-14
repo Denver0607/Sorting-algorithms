@@ -19,7 +19,6 @@ void insertionSortComparisons(int *&arr, int n, int &comparisonCounter)
 void insertionSortRuntime(int *&arr, int n)
 {
     int key, j;
-    auto start = chrono::steady_clock::now();
     for (int i = 0; i < n; i++)
     {
         key = arr[i];
