@@ -1,4 +1,15 @@
 #include "heapSort.cpp"
+#include "insertionSort.cpp"
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <string.h>
+#include <fstream>
+#include <stdlib.h>
+#include <chrono>
+#include "DataGenerator.cpp"
+using namespace std;
 
 int* read_file(string filename, int &input_size) {
     ifstream is(filename);
@@ -14,14 +25,20 @@ void Analysis(void(*funcPointerRunTime)(int *&, int), void(*funcPointerCompare)(
 {
     if(output_parameter == "-time") {
         // Runtime
-        //funcPointerRunTime(arr, input_size);
+        auto start = chrono::steady_clock::now();
+        funcPointerRunTime(arr, input_size);
+        auto end = chrono::steady_clock::now();
+        time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
     } else if (output_parameter == "-both") {
         //Runtime
         int *temp = new int[input_size];
         for(int i = 0; i < input_size; i++)
             temp[i] = arr[i];
+        
+        auto start = chrono::steady_clock::now();
         funcPointerRunTime(temp, input_size);
-
+        auto end = chrono::steady_clock::now();
+        time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
         //Compare
         funcPointerCompare(arr, input_size, count_comparison);
         delete []temp;
