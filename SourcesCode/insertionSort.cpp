@@ -1,5 +1,3 @@
-#include "func.h"
-
 void insertionSortComparisons(int *&arr, int n, int &comparisonCounter)
 {
     int key, j;
