@@ -1,6 +1,3 @@
-#include "func.h"
-
-
 void heapify(int *&arr, int n, int i) {
   // Find the largest child of the root
   int largest = i;
