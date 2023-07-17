@@ -1,6 +1,6 @@
 #include "..\header.h"
 
-void CountingSort(int *arr, const int &n, int &time)
+void countingSortRunTime(int *arr, const int &n, long long &time)
 {
     auto start = chrono::steady_clock::now();
     int max = arr[0], min = arr[0];
@@ -31,7 +31,7 @@ void CountingSort(int *arr, const int &n, int &time)
     time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 }
 
-void CountingSortCounting(int *arr, const int &n, uint64_t &count_comparisons)
+void countingSortComparisons(int *arr, const int &n, long long &count_comparisons)
 {
     int max = arr[0], min = arr[0];
     vector<int> ans = vector<int>(n);
