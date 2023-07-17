@@ -6,8 +6,8 @@ In each file sort.cpp:
     - In RUNTIME function, add code to calculate time.
     E.g. heapSort.cpp and insertionSort.cpp
     - Prototype:
-        + abcSortRunTime(int *&arr, int n, int &time)
-        + abcSortCompare(int *&arr, int n, int &count_comparisons)
+        + abcSortRunTime(int *&arr, int n, long long &time)
+        + abcSortCompare(int *&arr, int n, long long &count_comparisons)
 
 
 Structure in Sources code folder:
