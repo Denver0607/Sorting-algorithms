@@ -43,7 +43,7 @@ void quickSortRunTime(int *arr, const int &n, long long &time)
     time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 }
 
-void quickSortComparisons(int *arr, int left, int right, int &count_comparisons)
+void quickSortComparisons(int *arr, int left, int right, long long &count_comparisons)
 {
     int midValue = arr[(left + right) / 2];
     int i = left;
