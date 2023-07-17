@@ -17,8 +17,8 @@ void shellSortRunTime(int*& arr , int n, long long& time)
 		}
     }
 
-    // End time
-    auto end = chrono::high_resolution_clock::now();
+  	// End time
+	auto end = chrono::high_resolution_clock::now();
 	// Print out
 	time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 }
