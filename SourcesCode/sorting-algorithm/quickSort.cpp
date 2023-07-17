@@ -35,7 +35,7 @@ void quickSort(int *arr, int left, int right)
     }
 }
 
-void quickSortRunTime(int *arr, const int &n, long long &time)
+void quickSortRunTime(int *arr, int n, long long &time)
 {
     auto start = chrono::steady_clock::now();
     quickSort(arr, 0, n - 1);
