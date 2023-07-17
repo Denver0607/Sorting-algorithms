@@ -2,6 +2,7 @@
 
 void quickSort(int *arr, int left, int right)
 {
+    auto start = chrono::steady_clock::now();
     int midValue = arr[(left + right) / 2];
     int i = left;
     int j = right;
@@ -35,7 +36,7 @@ void quickSort(int *arr, int left, int right)
     }
 }
 
-void quickSortRunTime(int *arr, int n, long long &time)
+void quickSortRunTime(int *&arr, int n, long long &time)
 {
     auto start = chrono::steady_clock::now();
     quickSort(arr, 0, n - 1);
@@ -43,23 +44,23 @@ void quickSortRunTime(int *arr, int n, long long &time)
     time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 }
 
-void quickSortComparisons(int *arr, int left, int right, long long &count_comparisons)
+void quickSortCounting(int *&arr, int left, int right, long long &count)
 {
     int midValue = arr[(left + right) / 2];
     int i = left;
     int j = right;
     int temp;
-    while (++count_comparisons && i < j)
+    while (++count && i < j)
     {
-        while (++count_comparisons && arr[i] < midValue)
+        while (++count && arr[i] < midValue)
         {
             i++;
         }
-        while (++count_comparisons && arr[j] > midValue)
+        while (++count && arr[j] > midValue)
         {
             j--;
         }
-        if (++count_comparisons && i <= j)
+        if (++count && i <= j)
         {
             temp = arr[i];
             arr[i] = arr[j];
@@ -68,12 +69,17 @@ void quickSortComparisons(int *arr, int left, int right, long long &count_compar
             j--;
         }
     }
-    if (++count_comparisons && i < right)
+    if (++count && i < right)
     {
-        quickSortComparisons(arr, i, right, count_comparisons);
+        quickSortCounting(arr, i, right, count);
     }
-    if (++count_comparisons && left < j)
+    if (++count && left < j)
     {
-        quickSortComparisons(arr, left, j, count_comparisons);
+        quickSortCounting(arr, left, j, count);
     }
+}
+
+void quickSortComparisons(int *&arr, int n, long long &count_comparisons)
+{
+    quickSortCounting(arr, 0, n - 1, count_comparisons);
 }
