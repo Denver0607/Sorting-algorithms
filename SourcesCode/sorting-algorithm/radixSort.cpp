@@ -1,4 +1,4 @@
-#include "..\header.h"
+#include "../header.h"
 
 int getMax(int *&arr, int n)
 {
