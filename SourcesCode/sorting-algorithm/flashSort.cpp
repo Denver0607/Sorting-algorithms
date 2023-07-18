@@ -1,6 +1,6 @@
 #include "..\header.h"
 
-//Running time
+// Running time
 void insertionSort(int *arr, int n)
 {
 	for (int i = 1; i < n; i++)
@@ -16,14 +16,14 @@ void insertionSort(int *arr, int n)
 	}
 }
 
-void flashSortRunTime(int *arr, int n, long long &time)
+void flashSortRunTime(int *&arr, int n, long long &time)
 {
-    chrono::time_point<chrono::steady_clock> start, end;
-    start = chrono::steady_clock::now();
+	chrono::time_point<chrono::steady_clock> start, end;
+	start = chrono::steady_clock::now();
 	int minVal = arr[0];
 	int max = 0;
 	int m = int(0.45 * n);
-	int* l = new int[m];
+	int *l = new int[m];
 	for (int i = 0; i < m; i++)
 		l[i] = 0;
 	for (int i = 1; i < n; i++)
@@ -54,13 +54,14 @@ void flashSortRunTime(int *arr, int n, long long &time)
 		while (j > l[k] - 1)
 		{
 			j++;
-			k = int(c1*(arr[j] - minVal));
+			k = int(c1 * (arr[j] - minVal));
 		}
 		flash = arr[j];
-		if (k < 0) break;
+		if (k < 0)
+			break;
 		while (j != l[k])
 		{
-			k = int(c1*(flash - minVal));
+			k = int(c1 * (flash - minVal));
 			int hold = arr[t = --l[k]];
 			arr[t] = flash;
 			flash = hold;
@@ -69,12 +70,12 @@ void flashSortRunTime(int *arr, int n, long long &time)
 	}
 	delete[] l;
 	insertionSort(arr, n);
-    end = chrono::steady_clock::now();
-    time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+	end = chrono::steady_clock::now();
+	time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 }
 
-//Count Comparisons
-void insertionSortCompare(int *arr, int n, long long &count_comparisons)
+// Count Comparisons
+void insertionSortCompare_1(int *arr, int n, long long &count_comparisons)
 {
 	for (int i = 1; ++count_comparisons && i < n; i++)
 	{
@@ -89,13 +90,13 @@ void insertionSortCompare(int *arr, int n, long long &count_comparisons)
 	}
 }
 
-void flashSortCompare(int *arr, int n, long long &count_comparisons)
+void flashSortCompare(int *&arr, int n, long long &count_comparisons)
 {
-    count_comparisons = 0;
+	count_comparisons = 0;
 	int minVal = arr[0];
 	int max = 0;
 	int m = int(0.45 * n);
-	int* l = new int[m];
+	int *l = new int[m];
 	for (int i = 0; ++count_comparisons && i < m; i++)
 		l[i] = 0;
 	for (int i = 1; ++count_comparisons && i < n; i++)
@@ -126,13 +127,14 @@ void flashSortCompare(int *arr, int n, long long &count_comparisons)
 		while (++count_comparisons && j > l[k] - 1)
 		{
 			j++;
-			k = int(c1*(arr[j] - minVal));
+			k = int(c1 * (arr[j] - minVal));
 		}
 		flash = arr[j];
-		if (++count_comparisons && k < 0) break;
+		if (++count_comparisons && k < 0)
+			break;
 		while (++count_comparisons && j != l[k])
 		{
-			k = int(c1*(flash - minVal));
+			k = int(c1 * (flash - minVal));
 			int hold = arr[t = --l[k]];
 			arr[t] = flash;
 			flash = hold;
@@ -140,5 +142,5 @@ void flashSortCompare(int *arr, int n, long long &count_comparisons)
 		}
 	}
 	delete[] l;
-	insertionSortCompare(arr, n, count_comparisons);
+	insertionSortCompare_1(arr, n, count_comparisons);
 }
