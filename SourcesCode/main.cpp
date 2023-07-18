@@ -1,19 +1,19 @@
 #include "header.h"
-#include "sorting-algorithm\bubbleSort.cpp"
-#include "sorting-algorithm\countingSort.cpp"
-#include "sorting-algorithm\flashSort.cpp"
-#include "sorting-algorithm\heapSort.cpp"
-#include "sorting-algorithm\insertionSort.cpp"
-#include "sorting-algorithm\mergeSort.cpp"
-#include "sorting-algorithm\quickSort.cpp"
-#include "sorting-algorithm\radixSort.cpp"
-#include "sorting-algorithm\selectionSort.cpp"
-#include "sorting-algorithm\shakerSort.cpp"
-#include "sorting-algorithm\shellSort.cpp"
+#include "sorting-algorithm/bubbleSort.cpp"
+#include "sorting-algorithm/countingSort.cpp"
+#include "sorting-algorithm/flashSort.cpp"
+#include "sorting-algorithm/heapSort.cpp"
+#include "sorting-algorithm/insertionSort.cpp"
+#include "sorting-algorithm/mergeSort.cpp"
+#include "sorting-algorithm/quickSort.cpp"
+#include "sorting-algorithm/radixSort.cpp"
+#include "sorting-algorithm/selectionSort.cpp"
+#include "sorting-algorithm/shakerSort.cpp"
+#include "sorting-algorithm/shellSort.cpp"
 
 int *read_file(string filename, int &input_size)
 {
-    filename = "data\\" + filename;
+    filename = "data/" + filename;
     ifstream is(filename);
     if (!is)
     {
@@ -30,7 +30,7 @@ int *read_file(string filename, int &input_size)
 
 void write_file(string file_name, int *arr, int input_size)
 {
-    file_name = "data\\" + file_name;
+    file_name = "data/" + file_name;
     ofstream os(file_name);
     if (!os)
     {
