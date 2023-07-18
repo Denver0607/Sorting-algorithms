@@ -102,7 +102,7 @@ void findAlgorithm(void (*&funcPointerRunTime)(int *&, int, long long &), void (
     }
     if (algorithm_name == "insertion-sort")
     {
-        funcPointerRunTime = insertionSortRuntime;
+        funcPointerRunTime = insertionSortRunTime;
         funcPointerCompare = insertionSortCompare;
     }
     if (algorithm_name == "merge-sort")
