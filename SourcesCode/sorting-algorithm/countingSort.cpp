@@ -1,4 +1,4 @@
-#include "..\header.h"
+#include "../header.h"
 
 void countingSortRunTime(int *&arr, int n, long long &time)
 {
