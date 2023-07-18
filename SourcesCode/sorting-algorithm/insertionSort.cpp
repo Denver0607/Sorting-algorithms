@@ -1,4 +1,4 @@
-#include "..\header.h"
+#include "../header.h"
 void insertionSortCompare(int *&arr, int n, long long &count_comparisons)
 {
     count_comparisons = 0;
@@ -16,7 +16,7 @@ void insertionSortCompare(int *&arr, int n, long long &count_comparisons)
     }
 }
 
-void insertionSortRuntime(int *&arr, int n, long long &time)
+void insertionSortRunTime(int *&arr, int n, long long &time)
 {
     auto start = chrono::steady_clock::now();
     int key, j;
