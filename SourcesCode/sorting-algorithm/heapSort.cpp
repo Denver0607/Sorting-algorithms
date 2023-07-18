@@ -87,7 +87,7 @@ void heapSortCompare(int *&arr, int n, long long &count_comparisons)
   count_comparisons = 0;
   for (int i = n / 2 - 1; ++count_comparisons && i >= 0; i--)
   {
-    heapifyCompare(arr, n, i, count_comparions);
+    heapifyCompare(arr, n, i, count_comparisons);
   }
 
   // Heapsort
