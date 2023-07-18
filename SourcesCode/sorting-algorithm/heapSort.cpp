@@ -1,4 +1,4 @@
-#include "..\header.h"
+#include "../header.h"
 void heapify(int *&arr, int n, int i)
 {
   // Find the largest child of the root
