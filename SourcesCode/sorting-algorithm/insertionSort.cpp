@@ -1,5 +1,5 @@
 #include "..\header.h"
-void insertionSortComparisons(int *&arr, int n, long long &count_comparisons)
+void insertionSortCompare(int *&arr, int n, long long &count_comparisons)
 {
     count_comparisons = 0;
     int key, j;

@@ -31,7 +31,7 @@ void countingSortRunTime(int *&arr, int n, long long &time)
     time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 }
 
-void countingSortComparisons(int *&arr, int n, long long &count_comparisons)
+void countingSortCompare(int *&arr, int n, long long &count_comparisons)
 {
     int max = arr[0], min = arr[0];
     vector<int> ans = vector<int>(n);
