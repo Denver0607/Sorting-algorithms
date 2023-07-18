@@ -1,4 +1,4 @@
-#include "..\header.h"
+#include "../header.h"
 
 void bubbleSortCompare(int *&arr, int n, long long &count_comparisons)
 {
