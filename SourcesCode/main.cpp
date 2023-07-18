@@ -1,7 +1,15 @@
 #include "header.h"
+#include "sorting-algorithm\bubbleSort.cpp"
+#include "sorting-algorithm\countingSort.cpp"
+#include "sorting-algorithm\flashSort.cpp"
 #include "sorting-algorithm\heapSort.cpp"
 #include "sorting-algorithm\insertionSort.cpp"
+#include "sorting-algorithm\mergeSort.cpp"
+#include "sorting-algorithm\quickSort.cpp"
+#include "sorting-algorithm\radixSort.cpp"
+#include "sorting-algorithm\selectionSort.cpp"
 #include "sorting-algorithm\shakerSort.cpp"
+#include "sorting-algorithm\shellSort.cpp"
 
 int* read_file(string filename, int &input_size) {
     filename = "data\\" + filename;
