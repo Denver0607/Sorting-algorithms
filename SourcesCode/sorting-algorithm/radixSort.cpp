@@ -1,5 +1,6 @@
 #include "../header.h"
 
+//Runtime
 int getMax(int *&arr, int n)
 {
     int mx = arr[0];

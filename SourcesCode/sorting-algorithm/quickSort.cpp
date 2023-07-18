@@ -2,7 +2,6 @@
 
 void quickSort(int *arr, int left, int right)
 {
-    auto start = chrono::steady_clock::now();
     int midValue = arr[(left + right) / 2];
     int i = left;
     int j = right;

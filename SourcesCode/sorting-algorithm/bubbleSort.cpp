@@ -1,5 +1,6 @@
 #include "../header.h"
 
+//Count comparisons
 void bubbleSortCompare(int *&arr, int n, long long &count_comparisons)
 {
     int i, j;
@@ -18,6 +19,7 @@ void bubbleSortCompare(int *&arr, int n, long long &count_comparisons)
     }
 }
 
+//Runtime
 void bubbleSortRunTime(int *&arr, int n, long long &time)
 {
     chrono::time_point<chrono::system_clock> start, end;
