@@ -64,17 +64,49 @@ void Analysis(void(*funcPointerRunTime)(int *&, int, long long &), void(*funcPoi
 // THIS FUNCTION NEEDS TO COMPLETE
 void findAlgorithm(void(*&funcPointerRunTime)(int *&, int, long long &), void(*&funcPointerCompare)(int *&, int, long long &), string algorithm_name)
 {
+    if(algorithm_name == "bubble-sort") {
+        funcPointerCompare = bubbleSortCompare;
+        funcPointerRunTime = bubbleSortRunTime;
+    }
+    if(algorithm_name == "counting-sort") {
+        funcPointerRunTime = countingSortRunTime;
+        funcPointerCompare = countingSortCompare;
+    }
+    if(algorithm_name == "flash-sort") {
+        funcPointerCompare = flashSortCompare;
+        funcPointerRunTime = flashSortRunTime;
+    }
     if(algorithm_name == "heap-sort") {
         funcPointerRunTime = heapSortRunTime;
         funcPointerCompare = heapSortCompare;
     }
     if(algorithm_name == "insertion-sort") {
         funcPointerRunTime = insertionSortRuntime;
-        funcPointerCompare = insertionSortComparisons;
+        funcPointerCompare = insertionSortCompare;
+    }
+    if(algorithm_name == "merge-sort") {
+        funcPointerRunTime = mergeSortRunTime;
+        funcPointerCompare = mergeSortCompare;
+    }
+    if(algorithm_name == "quick-sort") {
+        funcPointerCompare = quickSortCompare;
+        funcPointerRunTime = quickSortRunTime;
+    }
+    if(algorithm_name == "radix-sort") {
+        funcPointerCompare = radixSortCompare;
+        funcPointerRunTime = radixSortRunTime;
+    }
+    if(algorithm_name == "selection-sort") {
+        funcPointerCompare = selectionSortCompare;
+        funcPointerRunTime = selectionSortRunTime;
     }
     if(algorithm_name == "shaker-sort") {
         funcPointerRunTime = shakerSortRunTime;
         funcPointerCompare = shakerSortCompare;
+    }
+    if(algorithm_name == "shell-sort") {
+        funcPointerRunTime = shellSortRunTime;
+        funcPointerCompare = shellSortCompare;
     }
 }
 
