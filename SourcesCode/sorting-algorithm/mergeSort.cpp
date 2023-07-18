@@ -1,4 +1,4 @@
-#include "..\header.h"
+#include "../header.h"
 // reference: codelearn.io
 
 void merge(int*&arr, int l, int m, int r)
