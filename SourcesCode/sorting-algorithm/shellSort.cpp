@@ -1,4 +1,4 @@
-#include "..\header.h"
+#include "../header.h"
 
 //Run Time
 void shellSortRunTime(int*& arr , int n, long long& time)
