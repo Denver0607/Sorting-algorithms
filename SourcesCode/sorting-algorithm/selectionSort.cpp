@@ -25,7 +25,7 @@ void selectionSortRunTime(int*& arr, int n, long long & time)
     // End time
 	auto end = chrono::steady_clock::now();
 	
-	time=chrono::duration_cast<chrono::microseconds>(end - start).count();
+	time=chrono::duration_cast<chrono::milliseconds>(end - start).count();
     
 }
 

@@ -20,7 +20,7 @@ void shellSortRunTime(int*& arr , int n, long long& time)
   	// End time
 	auto end = chrono::steady_clock::now();
 	// Print out
-	time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+	time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 }
 
 //Comparison counting
