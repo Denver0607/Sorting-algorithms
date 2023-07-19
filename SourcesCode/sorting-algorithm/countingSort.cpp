@@ -33,6 +33,7 @@ void countingSortRunTime(int *&arr, int n, long long &time)
 
 void countingSortCompare(int *&arr, int n, long long &count_comparisons)
 {
+    count_comparisons = 0;
     int max = arr[0], min = arr[0];
     vector<int> ans = vector<int>(n);
     for (int i = 1; ++count_comparisons && i < n; ++i)

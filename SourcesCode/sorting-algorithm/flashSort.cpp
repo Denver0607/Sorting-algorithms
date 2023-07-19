@@ -18,8 +18,7 @@ void insertionSort(int *arr, int n)
 
 void flashSortRunTime(int *&arr, int n, long long &time)
 {
-	chrono::time_point<chrono::steady_clock> start, end;
-	start = chrono::steady_clock::now();
+	auto start = chrono::steady_clock::now();
 	int minVal = arr[0];
 	int max = 0;
 	int m = int(0.45 * n);
@@ -70,7 +69,7 @@ void flashSortRunTime(int *&arr, int n, long long &time)
 	}
 	delete[] l;
 	insertionSort(arr, n);
-	end = chrono::steady_clock::now();
+	auto end = chrono::steady_clock::now();
 	time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 }
 

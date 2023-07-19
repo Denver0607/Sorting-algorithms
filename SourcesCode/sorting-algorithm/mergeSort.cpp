@@ -61,12 +61,12 @@ void mergeSort(int*& arr, int l, int r)
 void mergeSortRunTime(int*& arr, int n, long long& time)
 {
     // Start time
-    auto start = chrono::high_resolution_clock::now();
-
+    auto start = chrono::steady_clock::now();
+   
     mergeSort(arr, 0, n - 1);
 
     // End time
-    auto end = chrono::high_resolution_clock::now();
+    auto end = chrono::steady_clock::now();
 	time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 }
 
@@ -129,6 +129,7 @@ void mergeSortCount(int*& arr, int l, int r, long long &count)
 
 void mergeSortCompare(int*& arr, int n, long long &count_comparisons)
 {
+    count_comparisons = 0;
     int l = 0;
     int r = n - 1;
     mergeSortCount(arr, l, r, count_comparisons);

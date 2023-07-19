@@ -5,7 +5,7 @@
 void selectionSortRunTime(int*& arr, int n, long long & time)
 {
 	// Start time
- 	auto start = chrono::high_resolution_clock::now();
+ 	auto start = chrono::steady_clock::now();
 
 	int indexMin;
 	for (int i = 0; i < n-1; i++){
@@ -23,7 +23,7 @@ void selectionSortRunTime(int*& arr, int n, long long & time)
 	}
 
     // End time
-	auto end = chrono::high_resolution_clock::now();
+	auto end = chrono::steady_clock::now();
 	
 	time=chrono::duration_cast<chrono::microseconds>(end - start).count();
     
@@ -31,6 +31,7 @@ void selectionSortRunTime(int*& arr, int n, long long & time)
 
 // Comparison counting
 void selectionSortCompare(int*& arr, int n, long long & count_comparisons){
+	count_comparisons = 0;
 	int indexMin;
 	for (int i = 0; ++count_comparisons && i < n-1; i++){
 		indexMin = i;

@@ -4,7 +4,7 @@
 void shellSortRunTime(int*& arr , int n, long long& time)
 {
 	// Start time
- 	auto start = chrono::high_resolution_clock::now();
+ 	auto start = chrono::steady_clock::now();
 
    	int interval, i, j, temp;
 	for(interval = n/2; interval > 0; interval /= 2){
@@ -18,7 +18,7 @@ void shellSortRunTime(int*& arr , int n, long long& time)
     }
 
   	// End time
-	auto end = chrono::high_resolution_clock::now();
+	auto end = chrono::steady_clock::now();
 	// Print out
 	time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 }
@@ -26,6 +26,7 @@ void shellSortRunTime(int*& arr , int n, long long& time)
 //Comparison counting
 void shellSortCompare(int*& arr, int n, long long & count_comparisons)
 {
+	count_comparisons = 0;
 	int interval, i, j, temp;
 	for(interval = n/2; ++count_comparisons && interval > 0; interval /= 2)
 	{

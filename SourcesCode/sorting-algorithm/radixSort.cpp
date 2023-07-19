@@ -32,13 +32,12 @@ void countSort(int *&arr, int n, int exp)
 
 void radixSortRunTime(int *&arr, int n, long long &time)
 {
-    chrono::time_point<chrono::steady_clock> start, end;
-    start = chrono::steady_clock::now();
+    auto start = chrono::steady_clock::now();
     int m = getMax(arr, n);
 
     for (int exp = 1; m / exp > 0; exp *= 10)
         countSort(arr, n, exp);
-    end = chrono::steady_clock::now();
+    auto end = chrono::steady_clock::now();
     time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 }
 

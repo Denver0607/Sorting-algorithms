@@ -22,8 +22,7 @@ void bubbleSortCompare(int *&arr, int n, long long &count_comparisons)
 //Runtime
 void bubbleSortRunTime(int *&arr, int n, long long &time)
 {
-    chrono::time_point<chrono::system_clock> start, end;
-    start = chrono::system_clock::now();
+    auto start = chrono::steady_clock::now();
     int i, j;
     bool swapped;
     for (i = 0; i < n - 1; i++) {
@@ -37,6 +36,6 @@ void bubbleSortRunTime(int *&arr, int n, long long &time)
         if (swapped == false)
             break;
     }
-    end = chrono::system_clock::now();
+    auto end = chrono::steady_clock::now();
     time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 }

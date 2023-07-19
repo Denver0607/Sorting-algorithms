@@ -80,5 +80,6 @@ void quickSortCounting(int *&arr, int left, int right, long long &count)
 
 void quickSortCompare(int *&arr, int n, long long &count_comparisons)
 {
+    count_comparisons = 0;
     quickSortCounting(arr, 0, n - 1, count_comparisons);
 }
