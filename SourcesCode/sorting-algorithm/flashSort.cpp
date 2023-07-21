@@ -70,7 +70,7 @@ void flashSortRunTime(int *&arr, int n, long long &time)
 	delete[] l;
 	insertionSort(arr, n);
 	auto end = chrono::steady_clock::now();
-	time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+	time = chrono::duration_cast<chrono::milliseconds>(end - start).count();
 }
 
 // Count Comparisons
