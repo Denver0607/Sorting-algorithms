@@ -68,7 +68,9 @@ void Analysis(void (*funcPointerRunTime)(int *&, int, long long &), void (*funcP
 
         funcPointerRunTime(temp, input_size, time);
         // Compare
-        funcPointerCompare(arr, input_size, count_comparison);
+        for (int i = 0; i < input_size; i++)
+            temp[i] = arr[i];
+        funcPointerCompare(temp, input_size, count_comparison);
         delete[] temp;
     }
     else if (output_parameter == "-comp")
@@ -450,6 +452,7 @@ int main(int argc, char **argv)
     }
     else
     {
+        printOptions();
     }
     system("pause");
     return 0;
