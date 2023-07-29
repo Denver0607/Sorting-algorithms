@@ -315,7 +315,7 @@ void execute_4(string algorithm_name_1, string algorithm_name_2, int &input_size
         }
         else
         {
-            cout << "Algorithm 1 isn't exist." << endl;
+            cout << "Algorithm 1 doesn't exist." << endl;
             delete[] arr;
             return;
         }
@@ -330,7 +330,7 @@ void execute_4(string algorithm_name_1, string algorithm_name_2, int &input_size
         }
         else
         {
-            cout << "Algorithm 2 isn't exist." << endl;
+            cout << "Algorithm 2 doesn't exist." << endl;
             delete[] arr;
             return;
         }
@@ -362,7 +362,7 @@ void execute_5(string algorithm_name_1, string algorithm_name_2, int input_size,
     }
     else
     {
-        cout << "Algorithm 1 isn't exist." << endl;
+        cout << "Algorithm 1 doesn't exist." << endl;
         delete[] arr;
         return;
     }
@@ -377,7 +377,7 @@ void execute_5(string algorithm_name_1, string algorithm_name_2, int input_size,
     }
     else
     {
-        cout << "Algorithm 2 isn't exist." << endl;
+        cout << "Algorithm 2 doesn't exist." << endl;
         delete[] arr;
         return;
     }
@@ -385,6 +385,7 @@ void execute_5(string algorithm_name_1, string algorithm_name_2, int input_size,
     cout << "Algorithm: " << algorithm_name_1 << " | " << algorithm_name_2 << endl;
     cout << "Input size: " << input_size << endl;
     cout << "Input order: " << input_order << endl;
+    cout << "--------------------------" << endl;
     cout << "Running time: " << time_1 << " | " << time_2 << endl;
     cout << "Comparisons: " << count_1 << " | " << count_2 << endl;
     delete[] arr;
