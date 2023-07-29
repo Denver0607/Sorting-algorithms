@@ -412,14 +412,12 @@ int main(int argc, char **argv)
                 {
                     input_file_name = argv[idx_argv++];
                     output_parameter = argv[idx_argv++];
-                    cout << 1 << " " << mode << " " << algorithm_name_1 << " " << input_file_name << " " << output_parameter << endl;
                     execute_1(algorithm_name_1, input_size, input_file_name, output_parameter);
                 }
                 else
                 {
                     input_size = stoi(argv[idx_argv++]);
                     output_parameter = argv[idx_argv++];
-                    cout << 3 << " " << mode << " " << algorithm_name_1 << " " << input_size << " " << output_parameter << endl;
                     execute_3(algorithm_name_1, input_size, output_parameter);
                 }
             }
@@ -428,7 +426,6 @@ int main(int argc, char **argv)
                 input_size = stoi(argv[idx_argv++]);
                 input_order = argv[idx_argv++];
                 output_parameter = argv[idx_argv++];
-                cout << 2 << " " << mode << " " << algorithm_name_1 << " " << input_size << " " << input_order << " " << output_parameter << endl;
                 execute_2(algorithm_name_1, input_size, input_order, output_parameter);
             }
         }
@@ -439,14 +436,12 @@ int main(int argc, char **argv)
             if (argc == 5)
             {
                 input_file_name = argv[idx_argv++];
-                cout << 4 << " " << mode << " " << algorithm_name_1 << " " << algorithm_name_2 << " " << input_file_name << endl;
                 execute_4(algorithm_name_1, algorithm_name_2, input_size, input_file_name);
             }
             else
             {
                 input_size = stoi(argv[idx_argv++]);
                 input_order = argv[idx_argv++];
-                cout << 5 << " " << mode << " " << algorithm_name_1 << " " << algorithm_name_2 << " " << input_size << " " << input_order << endl;
                 execute_5(algorithm_name_1, algorithm_name_2, input_size, input_order);
             }
         }
